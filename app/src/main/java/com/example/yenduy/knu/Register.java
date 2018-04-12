@@ -10,7 +10,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -52,7 +51,7 @@ public class Register extends Activity {
                                 Toast.makeText(Register.this,"Registration Successfull",Toast.LENGTH_SHORT).show();
                                 startActivity(new Intent(Register.this, MainActivity.class));
                             }else {
-                                Toast.makeText(Register.this,"Registration Fail",Toast.LENGTH_SHORT).show();
+                                Toast.makeText(Register.this,"Registration Failed",Toast.LENGTH_SHORT).show();
                             }
                         }
                     });
@@ -88,10 +87,10 @@ public class Register extends Activity {
         String name = userName.getText().toString();
         String password = userPassword.getText().toString();
         String email= userEmail.getText().toString();
-
+        // 
         // si el usuario no se registra le dara error por eso creamos un if para que le de error
 
-        if (name.isEmpty() && password.isEmpty() && email.isEmpty()) {
+        if (name.isEmpty() || password.isEmpty() || email.isEmpty()) {
             Toast.makeText(this, "Please enter all the details", Toast.LENGTH_SHORT).show();
             // error msg por si no entran su informacion requerida
         }else {
