@@ -49,7 +49,7 @@ public class Register extends Activity {
 
                             if(task.isSuccessful()) { //tenemos que crear un loop con condicion if , else
                                 Toast.makeText(Register.this,"Registration Successfull",Toast.LENGTH_SHORT).show();
-                                startActivity(new Intent(Register.this, MainActivity.class));
+                                startActivity(new Intent(Register.this, Mainpage.class));
                             }else {
                                 Toast.makeText(Register.this,"Registration Failed",Toast.LENGTH_SHORT).show();
                             }
@@ -87,7 +87,7 @@ public class Register extends Activity {
         String name = userName.getText().toString();
         String password = userPassword.getText().toString();
         String email= userEmail.getText().toString();
-        // 
+
         // si el usuario no se registra le dara error por eso creamos un if para que le de error
 
         if (name.isEmpty() || password.isEmpty() || email.isEmpty()) {
