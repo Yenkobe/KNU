@@ -34,7 +34,7 @@ public class Register extends Activity {
         firebaseAuth = FirebaseAuth.getInstance();
 
 
-
+       //---------------------------------------------------------------------------//
         regButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -64,7 +64,7 @@ public class Register extends Activity {
             public void onClick(View view) {
                 startActivity(new Intent(Register.this , MainActivity.class));
 
-                // if u click in the already have account will sent u to the login layout
+                // if you already have an account will sent u to the login layout
 
             }
         });

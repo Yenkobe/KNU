@@ -19,47 +19,37 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class MainActivity extends AppCompatActivity {
 
+    private FirebaseAuth firebaseAuth;
+
+    private ProgressDialog progressDialog; // en lo que esperan para entrar a la app, aparecera un msg
     private TextView tv_register;
     private EditText Name;
     private EditText Password;
     private Button Login;
-    private FirebaseAuth firebaseAuth;
-    private ProgressDialog progressDialog; // en lo que esperan para entrar a la app, aparecera un msg
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
+        // init FirebaseAuth instanse
         firebaseAuth = FirebaseAuth.getInstance();
-        progressDialog = new ProgressDialog(this);
+
+
+        //-----------------  If user Login  -----------------------------------------------//
 
         FirebaseUser user = firebaseAuth.getCurrentUser();
-
         if (user !=null){  // si el usuario ya esta registrado lo envia directamente al mainpage
             finish();
             startActivity(new Intent(MainActivity.this,Mainpage.class ));
         }
 
 
-        // esto es para cuando demos un click en register, te pueda enviar al activityregister//
-        Name = (EditText)findViewById(R.id.editText4);
-        Password = (EditText)findViewById(R.id.editText5);
-        Login = (Button)findViewById(R.id.button3) ;
+
+        //-----------------  Register button code  -----------------------------------------------//
+
         tv_register= (TextView) findViewById(R.id.Register);
-
-
-        Login.setOnClickListener(new View.OnClickListener() {// login button para ir al mainpage\
-            @Override
-            public void onClick(View view) {
-                Intent intentLogin = new Intent(MainActivity.this, Mainpage.class);
-                MainActivity.this.startActivity(intentLogin);
-            }
-        });
-
         tv_register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -68,24 +58,56 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        }
-        private void validate(String Name, String Password){
 
-        progressDialog.setMessage("Please wait until you are verified");
-        progressDialog.show();
+        //-----------------  Login button code  --------------------------------------------------//
+        Login = (Button)findViewById(R.id.button3) ;
+        Login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intentRegister = new Intent(MainActivity.this,Register.class);
+                //Get activity obj;
+                Name = (EditText)findViewById(R.id.editText4);
+                Password = (EditText)findViewById(R.id.editText5);
 
-            firebaseAuth.createUserWithEmailAndPassword(Name , Password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                @Override
-                public void onComplete(@NonNull Task<AuthResult> task) {
-                    if(task.isSuccessful()){
-                        progressDialog.dismiss();
-                        Toast.makeText(MainActivity.this,"Login Successful", Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(MainActivity.this , Mainpage.class));
-                    }else {
-                        Toast.makeText(MainActivity.this,"Login Failed", Toast.LENGTH_SHORT).show();
-                    }
+                //Get data value in activity obj
+                String name = Name.getText().toString();
+                String password = Password.getText().toString();
+
+                //validate name/pass (all data not null or empty)
+                if( validateNamePass(name,password) ){
+                    // firebase auth
+                    firebaseAuth.signInWithEmailAndPassword(name,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
+                            if(task.isSuccessful()) { //tenemos que crear un loop con condicion if , else
+                                Toast.makeText(MainActivity.this,"Successful",Toast.LENGTH_SHORT).show();
+                                Intent intentLogin = new Intent(MainActivity.this, Mainpage.class);
+                                MainActivity.this.startActivity(intentLogin);
+                            }else {
+                                Toast.makeText(MainActivity.this,"Incorrect Username or password.",Toast.LENGTH_SHORT).show();
+                            }
+                        }
+                    });
                 }
-            });
+            }
+        });
 
-        }
     }
+
+    //-------------------------------------------------------------------------------------------//
+    private Boolean validateNamePass(String name, String password ){
+        Boolean result = false;
+        // si el usuario no se registra le dara error por eso creamos un if para que le de error
+        if (name.isEmpty() || password.isEmpty() ) {
+            Toast.makeText(this, "Please enter all the details", Toast.LENGTH_SHORT).show();
+            // error msg por si no entran su informacion requerida
+        }else {
+            result = true;
+        }
+        return result;
+    }
+    //-------------------------------------------------------------------------------------------//
+
+
+
+}

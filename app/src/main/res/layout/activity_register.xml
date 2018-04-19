@@ -37,8 +37,8 @@
         android:layout_below="@+id/Email"
         android:drawableLeft="@drawable/ic_action_user"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:hint="Username"/>
+        android:hint="Name"
+        android:inputType="textPersonName" />
 
     <EditText
         android:id="@+id/Password"
