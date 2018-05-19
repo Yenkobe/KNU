@@ -22,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
     private FirebaseAuth firebaseAuth;
 
     private ProgressDialog progressDialog; // en lo que esperan para entrar a la app, aparecera un msg
+                                          // 앱에 들어가기를 원하는 텍스트 메시지가 나타납니다.
     private TextView tv_register;
     private EditText Name;
     private EditText Password;
@@ -74,6 +75,7 @@ public class MainActivity extends AppCompatActivity {
                 String password = Password.getText().toString();
 
                 //validate name/pass (all data not null or empty)
+                // name / pass를 확인합니다 (모든 데이터가 null 또는 비어 있지 않음).
                 if( validateNamePass(name,password) ){
                     // firebase auth
                     firebaseAuth.signInWithEmailAndPassword(name,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
@@ -84,7 +86,7 @@ public class MainActivity extends AppCompatActivity {
                                 Intent intentLogin = new Intent(MainActivity.this, Mainpage.class);
                                 MainActivity.this.startActivity(intentLogin);
                             }else {
-                                Toast.makeText(MainActivity.this,"Incorrect Username or password.",Toast.LENGTH_SHORT).show();
+                                Toast.makeText(MainActivity.this,"Incorrect email or password.",Toast.LENGTH_SHORT).show();
                             }
                         }
                     });
@@ -97,7 +99,8 @@ public class MainActivity extends AppCompatActivity {
     //-------------------------------------------------------------------------------------------//
     private Boolean validateNamePass(String name, String password ){
         Boolean result = false;
-        // si el usuario no se registra le dara error por eso creamos un if para que le de error
+        // si el usuario no introduce los datos necesarios le dara error , por eso creamos un if
+        // 사용자가 필요한 데이터를 입력하지 않으면 오류가 발생합니다.
         if (name.isEmpty() || password.isEmpty() ) {
             Toast.makeText(this, "Please enter all the details", Toast.LENGTH_SHORT).show();
             // error msg por si no entran su informacion requerida

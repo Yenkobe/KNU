@@ -17,7 +17,11 @@
             </intent-filter>
         </activity>
         <activity android:name=".Register" />
-        <activity android:name=".Mainpage"></activity>
+        <activity android:name=".Mainpage" />
+        <activity android:name=".Bustracking" />
+        <activity android:name=".Busstop" />
+        <activity android:name=".Comunity" />
+        <activity android:name=".Knuhomepage"></activity>
     </application>
 
 </manifest>
