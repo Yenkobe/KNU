@@ -2,6 +2,7 @@ package com.example.yenduy.knu;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.CardView;
@@ -71,7 +72,7 @@ public class Mainpage extends AppCompatActivity {
                     }
                     else if (finalI ==3) // open activity knu page
                     {
-                        Intent intent = new Intent(Mainpage.this, Knuhomepage.class);
+                        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.kangwon.ac.kr/"));
                         startActivity(intent);
                     }
 
