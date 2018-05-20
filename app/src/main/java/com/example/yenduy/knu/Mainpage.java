@@ -13,6 +13,7 @@ import android.widget.Button;
 import android.widget.GridLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.Toolbar;
 
 import com.google.firebase.auth.FirebaseAuth;
 
@@ -21,28 +22,21 @@ public class Mainpage extends AppCompatActivity {
     GridLayout mainGrid;
 
     private FirebaseAuth firebaseAuth;
-    private Button Logout;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mainpage);
 
+        setSupportActionBar((android.support.v7.widget.Toolbar) findViewById(R.id.toolbar));
+
         mainGrid = (GridLayout)findViewById(R.id.mainGrid);
         setSingleEvent(mainGrid);
 
 
         firebaseAuth = FirebaseAuth.getInstance();
-        Logout = (Button) findViewById(R.id.logout);
 
-        Logout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                firebaseAuth.signOut();
-                finish();
-                startActivity(new Intent(Mainpage.this, MainActivity.class));
-            }
-        });
     }
 
     private void setSingleEvent(GridLayout mainGrid) {
@@ -70,7 +64,7 @@ public class Mainpage extends AppCompatActivity {
                         Intent intent = new Intent(Mainpage.this, Comunity.class);
                         startActivity(intent);
                     }
-                    else if (finalI ==3) // open activity knu page
+                    else if (finalI ==3) //  knu page
                     {
                         Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.kangwon.ac.kr/"));
                         startActivity(intent);
