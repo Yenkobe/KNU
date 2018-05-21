@@ -4,4 +4,5 @@
     <string name="setting">Setting</string>
     <string name="refresh">Refresh</string>
     <string name="logout1">Logout</string>
+    <string name="title_activity_community__rooom">Community_Rooom</string>
 </resources>
