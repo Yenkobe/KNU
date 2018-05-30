@@ -1,15 +1,18 @@
 package com.example.yenduy.knu;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import java.security.AccessController;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -61,16 +64,15 @@ public class CommunityRoom extends AppCompatActivity {
         }
 
         @Override
-        public View getView(int position, View converView, ViewGroup parent) {
+        public View getView(int position, View convertView, ViewGroup parent) {
 
-            if (converView == null) {
+            if (convertView == null) {
 
                 LayoutInflater inflater = (LayoutInflater) context.getSystemService(LAYOUT_INFLATER_SERVICE);
 
-                converView = inflater.inflate(R.layout.item_list, parent, false);
+                convertView = inflater.inflate(R.layout.item_list, parent, false);
             }
 
-            View  convertView = null;
             TextView tvSubject = (TextView) convertView.findViewById(R.id.tvSubject);
             TextView tvAuthor = (TextView) convertView.findViewById(R.id.tvAuthor);
             TextView tvHitCount = (TextView) convertView.findViewById(R.id.tvHitCount);

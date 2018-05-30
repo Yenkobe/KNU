@@ -8,8 +8,6 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import java.security.AccessController;
-
 public class DetailActivity extends AppCompatActivity {
 
     private TextView tvSubject;
@@ -17,7 +15,6 @@ public class DetailActivity extends AppCompatActivity {
     private TextView tvHitCount;
     private ListView lvArticleList;
     private ThreadLocal articleList;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,8 +34,10 @@ public class DetailActivity extends AppCompatActivity {
 
         tvHitCount.setText(article.getHitCoutn() + "");
 
-        lvArticleList.setOnClickListener(new AdapterView.OnItemClickListener(){
-            public void onItemClick(AdapterView parent, View view, int position, long id){
+
+        lvArticleList.setOnClickListener(new AdapterView.OnItemClickListener(){ ;
+            public void onItemClick(AdapterView parent, View view, int  position, long id){
+
 
                 ArticleVO article = articleList.get(position);
 
