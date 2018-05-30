@@ -8,7 +8,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -55,7 +54,7 @@ public class Comunity extends AppCompatActivity {
 
         List articleList = new ArrayList();
         for (int i = 0; i < 300; i++) {
-            articleList.add(new ArticleVO("제목입니다..." + i, "글쓴이입니다.", new Random().nextInt(9999)));
+            articleList.add(new ArticleVO("Item" + i, "Write hre.", new Random().nextInt(9999)));
         }
 
         lvArticleList.setAdapter(new ArticleListViewAdapter(articleList, this));
@@ -64,23 +63,9 @@ public class Comunity extends AppCompatActivity {
         // Ctrl + i
 
         private class ArticleListViewAdapter extends BaseAdapter {
-            /**
-             * ListView에 세팅할 Item 정보들
-             */
 
             private List articleList;
-
-            /**
-             * ListView에 Item을 세팅할 요청자의 정보가 들어감
-             */
-
             private Context context;
-
-            /**
-             * 생성자
-             *
-             * @param articleList * @param context
-             */
 
             public ArticleListViewAdapter(List articleList, Context context) {
                 this.articleList = articleList;
