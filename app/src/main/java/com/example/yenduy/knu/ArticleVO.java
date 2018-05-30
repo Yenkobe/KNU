@@ -1,9 +1,8 @@
 package com.example.yenduy.knu;
 
-import java.io.Serializable;
 
 
-public class ArticleVO implements Serializable{
+public class ArticleVO {
 
     private String subject;
     private String author;
