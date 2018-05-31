@@ -41,7 +41,12 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
 
-        <activity android:name=".Bustracking"></activity>
+        <activity android:name=".Bustracking" />
+        <activity android:name=".BOOK1" />
+        <activity android:name=".CommunitySend" />
+        <activity android:name=".UNIVlibrary" />
+        <activity android:name=".UNIVphotocopy" />
+        <activity android:name=".DVDroom"></activity>
     </application>
 
 </manifest>

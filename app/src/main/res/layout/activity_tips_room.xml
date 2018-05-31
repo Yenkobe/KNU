@@ -14,56 +14,77 @@
         android:orientation="vertical"
         >
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="22dp"
-        android:textSize="40sp"
-        android:text="Tips" />
-
-    <ImageButton
-        android:id="@+id/image1"
-        android:layout_width="wrap_content"
-        android:layout_height="399dp"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="72dp"
-        app:srcCompat="@drawable/나는고작" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="22dp"
+            android:text="Tips"
+            android:textSize="40sp" />
 
         <ImageButton
-        android:id="@+id/image2"
-        android:layout_width="wrap_content"
-        android:layout_height="399dp"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="72dp"
-        app:srcCompat="@drawable/mariasemples" />
+            android:id="@+id/image1"
+            android:layout_width="match_parent"
+            android:layout_height="242dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="0dp"
+            app:srcCompat="@drawable/book1" />
+
+        <TextView
+            android:id="@+id/Textview1"
+            android:layout_width="402dp"
+            android:layout_height="30dp"
+            android:textSize="20sp"
+            android:textAlignment="center"
+            android:text="나는 고작 한번 해봤을 뿐이다" />
+
+        <ImageButton
+            android:id="@+id/image2"
+            android:layout_width="match_parent"
+            android:layout_height="324dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="0dp"
+            app:srcCompat="@drawable/univlab" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="402dp"
+            android:layout_height="30dp"
+            android:text="학교 도서관"
+            android:textSize="20sp"
+            android:textAlignment="center" />
+
         <ImageButton
             android:id="@+id/image3"
             android:layout_width="wrap_content"
-            android:layout_height="399dp"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginBottom="72dp"
-            app:srcCompat="@drawable/hediedwith" />
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="0dp"
+            app:srcCompat="@drawable/univcampus" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="402dp"
+            android:layout_height="30dp"
+            android:text="복사기의 위치"
+            android:textSize="20sp"
+            android:textAlignment="center" />
+
         <ImageButton
             android:id="@+id/image4"
             android:layout_width="wrap_content"
-            android:layout_height="399dp"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginBottom="72dp"
-            app:srcCompat="@drawable/hediedwith" />
-        <ImageButton
-            android:id="@+id/image5"
-            android:layout_width="wrap_content"
-            android:layout_height="399dp"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginBottom="72dp"
-            app:srcCompat="@drawable/hediedwith" />
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="0dp"
+            app:srcCompat="@drawable/movies" />
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="402dp"
+            android:layout_height="30dp"
+            android:textSize="20sp"
+            android:text="도서관 내의 DVD"
+            android:textAlignment="center" />
 
 
     </LinearLayout>

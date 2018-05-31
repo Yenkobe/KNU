@@ -2,6 +2,8 @@ package com.example.yenduy.knu;
 
 import android.content.Context;
 
+import android.content.Intent;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -33,6 +35,15 @@ public class CommunityRoom extends AppCompatActivity {
         }
 
         lvArticleList.setAdapter(new ArticleListViewAdapter(articleList, this));
+
+
+        FloatingActionButton fab = findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(CommunityRoom.this, CommunitySend.class));
+            }
+        });
     }
 
     // Ctrl + i
