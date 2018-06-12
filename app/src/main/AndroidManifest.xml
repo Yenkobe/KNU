@@ -39,7 +39,7 @@
         -->
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="@string/google_maps_key" />
+            android:value="AIzaSyDa3Vu1i-wcRiyxXZOJIXIPY_EC6LvR2e4" />
 
         <activity android:name=".Bustracking" />
         <activity android:name=".BOOK1" />
@@ -47,6 +47,8 @@
         <activity android:name=".UNIVlibrary" />
         <activity android:name=".UNIVphotocopy" />
         <activity android:name=".DVDroom"></activity>
+
+
     </application>
 
 </manifest>
