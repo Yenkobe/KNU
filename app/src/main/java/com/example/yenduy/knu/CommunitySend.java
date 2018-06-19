@@ -43,23 +43,27 @@ public class CommunitySend extends AppCompatActivity {
                 DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference(); //Get Reference database
                 Map<String, String> sendData = new HashMap<>();
 
-
                 DateFormat df = new SimpleDateFormat("EEE, d MMM yyyy, HH:mm");
                 String date = df.format(Calendar.getInstance().getTime());
-
 
                 EditText editText = (EditText) findViewById(R.id.editText);
 
                 String msg = editText.getText().toString();
+                long time= System.currentTimeMillis();
+                String strLong = Long.toString(time);
+
+                sendData.put("timastamp", strLong );
                 sendData.put("date", date );
                 sendData.put("text", msg );
+
 /*
                 FirebaseUser user = firebaseAuth.getCurrentUser();
                 sendData.put("email", user.getEmail() );
 */
-                databaseReference.child("community").child(date).setValue(sendData);
+                databaseReference.child("community").child(strLong).setValue(sendData);
 
                 //close activity
+
                 Intent intent = new Intent(CommunitySend.this, CommunityRoom.class );
                 CommunitySend.this.finish();
                 startActivity(intent);
