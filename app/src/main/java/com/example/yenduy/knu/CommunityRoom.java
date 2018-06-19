@@ -34,6 +34,7 @@ public class CommunityRoom extends AppCompatActivity {
 
 
     private ListView ArticleList;
+    private TextView tvTitle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,6 +65,9 @@ public class CommunityRoom extends AppCompatActivity {
                 ArrayList<String> listKeys = new ArrayList<String>();
                 ArrayAdapter<String> adapter;
                 ArticleList = (ListView) findViewById(R.id.ArticleList);
+                tvTitle = (TextView) findViewById(R.id.tvTitle);
+
+                tvTitle.setText("");
 
 
                 for (DataSnapshot postSnapshot: dataSnapshot.getChildren()) {
@@ -73,10 +77,10 @@ public class CommunityRoom extends AppCompatActivity {
                     for (DataSnapshot child : dataSnapshot.getChildren()){
                         //child is each element in the finished list
                         Map<String, String> message = (Map<String, String>)child.getValue();
-                        //message.get("date");
-                        Log.w("FIREBAS---", "EVENT" + message.get("date") );
+                       // message.get("date");
+                        Log.w("CYCLE" ,"FIREBAS---" + message.get("date") );
 
-                        listItems.add( message.get("date") + "\n" +message.get("text") );
+                        listItems.add( message.get("Title")  + "\n" +message.get("text")+ "\n" +message.get("date")  );
                     }
                 }
 

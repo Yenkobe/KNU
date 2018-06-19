@@ -47,12 +47,15 @@ public class CommunitySend extends AppCompatActivity {
                 String date = df.format(Calendar.getInstance().getTime());
 
                 EditText editText = (EditText) findViewById(R.id.editText);
+                EditText editText1 = (EditText) findViewById(R.id.editText1);
 
-                String msg = editText.getText().toString();
+                String msg1 = editText.getText().toString();
+                String msg = editText1.getText().toString();
                 long time= System.currentTimeMillis();
                 String strLong = Long.toString(time);
 
-                sendData.put("timastamp", strLong );
+                sendData.put("Title", msg1);
+                sendData.put("timestamp", strLong );
                 sendData.put("date", date );
                 sendData.put("text", msg );
 
