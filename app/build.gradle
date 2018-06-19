@@ -36,7 +36,7 @@ dependencies {
     implementation 'com.google.firebase:firebase-messaging:17.0.0'
 
     implementation 'com.google.firebase:firebase-functions:16.0.1'
-
+    implementation 'com.google.firebase:firebase-database:16.0.1'
 
     implementation 'com.google.android.gms:play-services-maps:15.0.1'
     compile 'com.android.support:support-annotations:27.1.1'
