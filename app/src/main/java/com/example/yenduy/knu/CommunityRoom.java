@@ -76,13 +76,12 @@ public class CommunityRoom extends AppCompatActivity {
 
 
                 ArticleList.setAdapter(new ArrayAdapter<String>(CommunityRoom.this, android.R.layout.simple_list_item_1, listItems));
-                //ArticleList.setChoiceMode(ListView.CHOICE_MODE_SINGLE);
+
             }
 
             @Override
             public void onCancelled(DatabaseError databaseError) {
-                // Getting Post failed, log a message
-                //  Log.w("FIREBAS---", "loadPost:onCancelled", databaseError.toException());
+
             }
         };
         ref.addValueEventListener(postListener);

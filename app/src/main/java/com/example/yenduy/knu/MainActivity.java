@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
     private FirebaseAuth firebaseAuth;
 
     private ProgressDialog progressDialog; // en lo que esperan para entrar a la app, aparecera un msg
-                                          // 앱에 들어가기를 원하는 텍스트 메시지가 나타납니다.
+
     private TextView tv_register;
     private EditText Name;
     private EditText Password;
