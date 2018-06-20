@@ -30,7 +30,7 @@ dependencies {
     //noinspection GradleCompatible
     implementation 'com.google.firebase:firebase-core:16.0.0'
     implementation 'com.android.support:design:27.1.1'
-    // Add this line from firebase, is a google repository
+    // Added this line from firebase, is a google repository
     implementation 'com.google.firebase:firebase-crash:16.0.0'
     implementation 'com.google.firebase:firebase-auth:16.0.1'
     implementation 'com.google.firebase:firebase-messaging:17.0.0'

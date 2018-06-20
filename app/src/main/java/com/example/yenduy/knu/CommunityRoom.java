@@ -42,16 +42,6 @@ public class CommunityRoom extends AppCompatActivity {
         setContentView(R.layout.activity_community_room);
 
 
-        /*
-        ArticleList = (ListView) findViewById(R.id.ArticleList);
-        List articleList = new ArrayList();
-        for (int i = 0; i < 300; i++) {
-            articleList.add(new ArticleVO("Item" + i, ".", new Random().nextInt(999)));
-        }
-        lvArticleList.setAdapter(new ArticleListViewAdapter(articleList, this));
-        */
-
-
         DatabaseReference database = FirebaseDatabase.getInstance().getReference();
         DatabaseReference ref = database.child("community");
         ValueEventListener postListener = new ValueEventListener() {

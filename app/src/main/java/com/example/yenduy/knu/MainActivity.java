@@ -79,7 +79,6 @@ public class MainActivity extends AppCompatActivity {
                 String password = Password.getText().toString();
 
                 //validate name/pass (all data not null or empty)
-                // name / pass를 확인합니다 (모든 데이터가 null 또는 비어 있지 않음).
                 if( validateNamePass(name,password) ){
                     // firebase auth
                     firebaseAuth.signInWithEmailAndPassword(name,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {

@@ -33,7 +33,6 @@ public class Register extends Activity {
 
         firebaseAuth = FirebaseAuth.getInstance();
 
-
        //---------------------------------------------------------------------------//
         regButton.setOnClickListener(new View.OnClickListener() {
             @Override
